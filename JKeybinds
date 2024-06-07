@@ -357,7 +357,7 @@ WB:NewKeybind("Incendia", "", Enum.KeyCode.C, function()
         end
     end
 end)
-WB:NewKeybind("Motus", "",Enum.KeyCode.F, function()
+WB:NewKeybind("Motus", "",Enum.KeyCode.C, function()
     if game.workspace.AstroValues.Keys.Value == "Active" then
     if IsTyping then return end
     local Mouse = game.Players.LocalPlayer:GetMouse()
