@@ -291,9 +291,10 @@ WB:NewKeybind("Immobilus", "", Enum.KeyCode.X, function()
                     [2] = player.Character
                 }
             }
-
-            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-        end
+		for _ =  1, 3 do
+           	game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
+  	   end
+       end
     end
 end)
 WB:NewKeybind("Incendia", "", Enum.KeyCode.C, function()
@@ -354,6 +355,21 @@ WB:NewKeybind("Incendia", "", Enum.KeyCode.C, function()
                 game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
             end
         end
+    end
+end)
+WB:NewKeybind("Motus", "",Enum.KeyCode.F, function()
+    if game.workspace.AstroValues.Keys.Value == "Active" then
+    if IsTyping then return end
+    local Mouse = game.Players.LocalPlayer:GetMouse()
+    local args = {
+        [1] = "Magic",
+        [2] = {
+        [1] = "Motus",
+        [2] = false
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
     end
 end)
 WB:NewKeybind("Pain", "", Enum.KeyCode.G, function()
