@@ -1,4 +1,3 @@
-
 local Library1 = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library1.CreateLib("Key system", "DarkTheme")
 local MainT = Window:NewTab("Main")
@@ -55,7 +54,7 @@ local currentTime = GetCurrentTime()
 local url = "https://discord.com/api/webhooks/1248489709307691068/LTV06zoV2Zbg8J3HYWMoRecwY06cfFG_7tnnGcBy1JTeiwWEKYFMIsOyqbXPrh8fUcHX"
 local roleId = "1248489839544897617"
 
-local authorizedKey = "XlySz0q40"
+local authorizedKey = "Tester"
 local authorizedUserId = 3796046447
 
 Main:NewTextBox('Enter key', 'Enter the key here to gain access to the script', function(key)
