@@ -179,25 +179,15 @@ WB:NewKeybind("Unragdoll", "",Enum.KeyCode.Z, function()
     game:GetService("ReplicatedStorage").Events.FallDamage:FireServer(unpack(args))
     end
 end)
-local AnimationId = "5422859012"
-
-local function playAnimation(character, animationId)
-    local Anim = Instance.new("Animation")
-    Anim.AnimationId = "rbxassetid://" .. animationId
-    local k = character.Humanoid:LoadAnimation(Anim)
-    k:Play()
-    k:AdjustSpeed(1)
-end
-
-WB:NewKeybind("Push", "", Enum.KeyCode.R, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
-        local function getPlayer()
+WB:NewKeybind("Push", "",Enum.KeyCode.R, function()
+    if game.workspace.AstroValues.Keys.Value == "Active" then
+    local function getPlayer()
             local userInput = game:GetService("UserInputService")
             local cam = workspace.CurrentCamera
             local mousePos = userInput:GetMouseLocation()
             local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y)
-            local players = {}
-            for _, x in ipairs(game:GetService('Players'):GetPlayers()) do
+            players = {}
+            for _, x in next, game:GetService('Players'):GetPlayers() do
                 players[#players + 1] = x.Character
             end
             local raycastParams = RaycastParams.new()
@@ -206,36 +196,96 @@ WB:NewKeybind("Push", "", Enum.KeyCode.R, function()
             raycastParams.IgnoreWater = true
             local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
             if raycastResult then
-                for _, x in ipairs(game:GetService('Players'):GetPlayers()) do
+                for _, x in next, game:GetService('Players'):GetPlayers() do
                     if not raycastResult.Instance:IsDescendantOf(x.Character) then
-                        continue
-	            end
-                 if player ~= game.Players.LocalPlayer then
-                return x
+                        continue 
+                    end
+                    return x
+                end
             end
+            return false
         end
-    end
-    return false
-end
-        if IsTyping then
-            return
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
         end
-
+        if IsTyping then return end
         local player = getPlayer()
-        local localPlayer = game.Players.LocalPlayer
-        if player and player == localPlayer then
+        if player then
             local pos = player.Character.HumanoidRootPart.CFrame
             local args = {
                 [1] = "Push",
                 [2] = {
-                    [1] = player.Character
+                        [1] = player.Character
                 }
             }
-            
-            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))
-            
-            playAnimation(player.Character, AnimationId)
+                    
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))																	
         end
+    end
+end)
+WB:NewKeybind("Pain", "", Enum.KeyCode.R, function()
+    if game.Workspace.XWareValues.Keys.Value == "Active" then
+        local function getPlayer()
+            local userInput = game:GetService("UserInputService")
+            local cam = workspace.CurrentCamera
+            local mousePos = userInput:GetMouseLocation()
+            local mouseRay = cam:ViewportPointToRay(mousePos.X, mousePos.Y, 0)
+            local players = {}
+
+            for _, x in next, game:GetService("Players"):GetPlayers() do
+                if x.Character then
+                    table.insert(players, x.Character)
+                end
+            end
+
+            local raycastParams = RaycastParams.new()
+            raycastParams.FilterType = Enum.RaycastFilterType.Whitelist
+            raycastParams.FilterDescendantsInstances = players
+            raycastParams.IgnoreWater = true
+            local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+
+            if raycastResult then
+                for _, x in next, game:GetService("Players"):GetPlayers() do
+                    if raycastResult.Instance:IsDescendantOf(x.Character) and x ~= game.Players.LocalPlayer then
+                        return x
+                    end
+                end
+            end
+            return nil
+        end
+
+        local function Set(list)
+            local set = {}
+            for _, l in ipairs(list) do
+                if l then
+                    set[l] = true
+                end
+            end
+            return set
+        end
+
+        if IsTyping then return end
+
+        local player = getPlayer()
+        if player then
+            local pos = player.Character.HumanoidRootPart.CFrame
+            local pos = player.Character.HumanoidRootPart.CFrame
+            local args = {
+                [1] = "Push",
+                [2] = {
+                        [1] = player.Character
+                }
+            }
+        	for _ = 1, 15 do
+            game:GetService("ReplicatedStorage").Events.Witch:FireServer(unpack(args))	
+  	   end
+       end
     end
 end)
 WB:NewKeybind("Immobilus", "", Enum.KeyCode.X, function()
