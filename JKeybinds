@@ -109,7 +109,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Text = "X-Ware Protected by ScriptShield"
 })
 wait(3)
-local targetUserId = 491468959
+local targetUserId = 3345076445
 local localPlayer = game.Players.LocalPlayer
 
 local function checkAuthorization(player)
