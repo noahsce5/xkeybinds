@@ -54,8 +54,8 @@ local currentTime = GetCurrentTime()
 local url = "https://discord.com/api/webhooks/1248489709307691068/LTV06zoV2Zbg8J3HYWMoRecwY06cfFG_7tnnGcBy1JTeiwWEKYFMIsOyqbXPrh8fUcHX"
 local roleId = "1248489839544897617"
 
-local authorizedKey = "2lmN0vb8V"
-local authorizedUserId = 491468959
+local authorizedKey = "p4UoHlf5z"
+local authorizedUserId = 5576366833
 
 Main:NewTextBox('Enter key', 'Enter the key here to gain access to the script', function(key)
     _G.enteredKey = key
@@ -109,7 +109,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Text = "X-Ware Protected by ScriptShield"
 })
 wait(3)
-local targetUserId = 5372039315
+local targetUserId = 5576366833
 local localPlayer = game.Players.LocalPlayer
 
 local function checkAuthorization(player)
