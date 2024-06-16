@@ -854,5 +854,3 @@ end)
 G:NewKeybind("Toggle Gui", "", Enum.KeyCode.Tab, function()
     Library:ToggleUI()
 end)
-Library1:ToggleUI()
-end
