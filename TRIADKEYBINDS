@@ -98,6 +98,10 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "TriadWare",
     Text = "The Keybinds has loaded!"
 })
+local TriadValues = Instance.new("Folder",workspace)
+TriadValues.Name = "TriadValues"
+local ActiveKey = Instance.new("StringValue",workspace.TriadValues)
+ActiveKey.Name = "Keys"
 local Player = game.Players.LocalPlayer
 local Character = Player.Character
 local hum = Character.HumanoidRootPart
@@ -139,13 +143,13 @@ while _G.ANTIBAN == true do
 end
 WB:NewToggle("Keybinds", "If true then Keybinds will work", function(state)
     if state == true then
-        game.workspace.XWareValues.Keys.Value = "Active"
+        game.workspace.TriadValues.Keys.Value = "Active"
     else
-        game.workspace.XWareValues.Keys.Value = "In Active"
+        game.workspace.TriadValues.Keys.Value = "In Active"
     end
 end)
 WB:NewKeybind("Unragdoll", "",Enum.KeyCode.Z, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
     if IsTyping then return end
     local args = {
         [1] = 1
@@ -164,7 +168,7 @@ local function playAnimation(character, animationId)
 end
 
 WB:NewKeybind("Push", "", Enum.KeyCode.R, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
         local function getPlayer()
             local userInput = game:GetService("UserInputService")
             local cam = workspace.CurrentCamera
@@ -213,7 +217,7 @@ end
     end
 end)
 WB:NewKeybind("Immobilus", "", Enum.KeyCode.X, function()
-    if game.Workspace.XWareValues.Keys.Value == "Active" then
+    if game.Workspace.TriadValues.Keys.Value == "Active" then
         local function getPlayer()
             local userInput = game:GetService("UserInputService")
             local cam = workspace.CurrentCamera
@@ -272,7 +276,7 @@ WB:NewKeybind("Immobilus", "", Enum.KeyCode.X, function()
     end
 end)
 WB:NewKeybind("Incendia", "", Enum.KeyCode.C, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
         local function getPlayer()
             local userInput = game:GetService("UserInputService")
             local cam = workspace.CurrentCamera
@@ -347,7 +351,7 @@ WB:NewKeybind("Motus", "",Enum.KeyCode.F, function()
     end
 end)
 WB:NewKeybind("Pain", "", Enum.KeyCode.G, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
         local function getPlayer()
             local userInput = game:GetService("UserInputService")
             local cam = workspace.CurrentCamera
@@ -402,7 +406,7 @@ end
     end
 end)
 WB:NewKeybind("Ossox", "",Enum.KeyCode.U, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
     local function getPlayer()
             local userInput = game:GetService("UserInputService")
             local cam = workspace.CurrentCamera
@@ -453,7 +457,7 @@ WB:NewKeybind("Ossox", "",Enum.KeyCode.U, function()
     end
 end)
 WB:NewKeybind("Mass Neck Snap", "",Enum.KeyCode.P, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
     if IsTyping then return end
     local Mouse = game.Players.LocalPlayer:GetMouse()
     local args = {
@@ -467,7 +471,7 @@ WB:NewKeybind("Mass Neck Snap", "",Enum.KeyCode.P, function()
     end
 end)
 WB:NewKeybind("Explode", "",Enum.KeyCode.Y, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
     if IsTyping then return end
     local Mouse = game.Players.LocalPlayer:GetMouse()
     local A_1 = "Magic"
@@ -481,7 +485,7 @@ WB:NewKeybind("Explode", "",Enum.KeyCode.Y, function()
     end
 end)
 WB:NewKeybind("Fire Circle", "",Enum.KeyCode.Q, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
     local function getPlayer()
         local userInput = game:GetService("UserInputService")
         local cam = workspace.CurrentCamera
@@ -532,7 +536,7 @@ WB:NewKeybind("Fire Circle", "",Enum.KeyCode.Q, function()
     end
 end)
 WB:NewKeybind("Ring Off", "",Enum.KeyCode.K, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
     local function getPlayer()
         local userInput = game:GetService("UserInputService")
         local cam = workspace.CurrentCamera
@@ -583,7 +587,7 @@ WB:NewKeybind("Ring Off", "",Enum.KeyCode.K, function()
     end
 end)
 WB:NewKeybind("Ring On", "",Enum.KeyCode.L, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
     local function getPlayer()
         local userInput = game:GetService("UserInputService")
         local cam = workspace.CurrentCamera
@@ -634,7 +638,7 @@ WB:NewKeybind("Ring On", "",Enum.KeyCode.L, function()
     end
 end)
 WB:NewKeybind("Fire Removal", "",Enum.KeyCode.N, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
     local function getPlayer()
         local userInput = game:GetService("UserInputService")
         local cam = workspace.CurrentCamera
@@ -685,7 +689,7 @@ WB:NewKeybind("Fire Removal", "",Enum.KeyCode.N, function()
     end
 end)
 WB:NewKeybind("Heart Rip", "",Enum.KeyCode.B, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
     local function getPlayer()
         local userInput = game:GetService("UserInputService")
         local cam = workspace.CurrentCamera
@@ -738,7 +742,7 @@ end
     end
 end)
 WB:NewKeybind("Errox Femus", "",Enum.KeyCode.T, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
     local function getPlayer()
         local userInput = game:GetService("UserInputService")
         local cam = workspace.CurrentCamera
@@ -789,7 +793,7 @@ WB:NewKeybind("Errox Femus", "",Enum.KeyCode.T, function()
     end
 end)
 WB:NewKeybind("Sleep Spell", "",Enum.KeyCode.J, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
     local function getPlayer()
         local userInput = game:GetService("UserInputService")
         local cam = workspace.CurrentCamera
@@ -839,7 +843,7 @@ WB:NewKeybind("Sleep Spell", "",Enum.KeyCode.J, function()
     end
 end)
 WB:NewKeybind("Invisibility", "",Enum.KeyCode.V, function()
-    if game.workspace.XWareValues.Keys.Value == "Active" then
+    if game.workspace.TriadValues.Keys.Value == "Active" then
     if IsTyping then return end
     local Mouse = game.Players.LocalPlayer:GetMouse()
     local A_1 = "Magic"
