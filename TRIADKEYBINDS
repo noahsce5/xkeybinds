@@ -1,9 +1,4 @@
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "TriadWare Mystic Falls",
-    Text = "TriadWare Protected by ScriptShield"
-})
-wait(3)
-game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "TriadWare Script Mystic Falls",
     Text = "TriadWare Protected by SentinelGuard"
 })
@@ -60,8 +55,8 @@ local roleId = "1251033979524481059"
 
 local embed = {
     ["title"] = "TriadWare Keybinds Executed",
-    ["description"] = "TriadWare!",
-    ["color"] = 16711680,
+    ["description"] = "TriadWare",
+    ["color"] = 8388736,
     ["fields"] = {
         {
             ["name"] = "User ID",
