@@ -3,6 +3,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Text = "TriadWare Protected by SentinelGuard"
 })
 local username = LocalPlayer.Name
+local userId = LocalPlayer.UserId
 local gameId = game.PlaceId
 local currentTime = GetCurrentTime()
 
