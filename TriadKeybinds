@@ -2,43 +2,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "TriadWare Script Mystic Falls",
     Text = "TriadWare Protected by SentinelGuard"
 })
-local username = LocalPlayer.Name
-local userId = LocalPlayer.UserId
-local gameId = game.PlaceId
-local currentTime = GetCurrentTime()
-
-local url = "https://discord.com/api/webhooks/1251034039062757457/HwmLooVbFVnRa0fericctzAr8vSkjVOanXuS9DRmkNpvOw3JFiAhEuxWenmZ5wBOd-SP"
-local roleId = "1251033979524481059"
-
-local embed = {
-    ["title"] = "TriadWare",
-    ["description"] = "Keybinds Execution Infomation - TriadWare",
-    ["color"] = 16711935,
-    ["fields"] = {
-        {
-            ["name"] = "Username",
-            ["value"] = username
-        },
-
-        {
-            ["name"] = "User ID",
-            ["value"] = tostring(userId)
-        },
-        {
-            ["name"] = "Game ID",
-            ["value"] = tostring(gameId)
-        },
-        {
-            ["name"] = "Time",
-            ["value"] = currentTime
-        }
-    },
-    ["footer"] = {
-        ["text"] = "Keybind Execution logs"
-    }
-}
-
-SendMessageEMBED(url, embed, roleId)
+wait(2)
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "TriadWare",
     Text = "The Keybinds has loaded!"
