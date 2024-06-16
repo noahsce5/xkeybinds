@@ -1,9 +1,4 @@
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "TriadWare Script Mystic Falls",
-    Text = "TriadWare Protected by SentinelGuard"
-})
-wait(2)
-game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "TriadWare",
     Text = "The Keybinds has loaded!"
 })
