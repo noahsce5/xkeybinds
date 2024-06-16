@@ -2,93 +2,27 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "TriadWare Script Mystic Falls",
     Text = "TriadWare Protected by SentinelGuard"
 })
-local Players = game:GetService("Players")
-local HttpService = game:GetService("HttpService")
-local TeleportService = game:GetService("TeleportService")
-local LocalPlayer = Players.LocalPlayer
-
-function SendMessageEMBED(url, embed, roleId)
-    local headers = {
-        ["Content-Type"] = "application/json"
-    }
-    local data = {
-        ["content"] = "<@&" .. roleId .. ">",
-        ["embeds"] = {
-            {
-                ["title"] = embed.title,
-                ["description"] = embed.description,
-                ["color"] = embed.color,
-                ["fields"] = embed.fields,
-                ["footer"] = {
-                    ["text"] = embed.footer.text
-                }
-            }
-        }
-    }
-    local body = HttpService:JSONEncode(data)
-    local response = request({
-        Url = url,
-        Method = "POST",
-        Headers = headers,
-        Body = body
-    })
-end
-
-local function GetGameLink()
-    local placeId = game.PlaceId
-    return "https://www.roblox.com/games/" .. placeId
-end
-
-local function GetCurrentTime()
-    return os.date("%Y-%m-%d %H:%M:%S")
-end
-
-local userId = LocalPlayer.UserId
-local username = LocalPlayer.Name
-local gameId = game.PlaceId
-local gameLink = GetGameLink()
+local username = GetUsername()
 local currentTime = GetCurrentTime()
-local jobId = game.JobId 
-
-local url = "https://discord.com/api/webhooks/1251034039062757457/HwmLooVbFVnRa0fericctzAr8vSkjVOanXuS9DRmkNpvOw3JFiAhEuxWenmZ5wBOd-SP"
+local gameId = tostring(game.GameId)
+local userId = tostring(game.UserId)
+local webhookUrl = "https://discord.com/api/webhooks/1251034039062757457/HwmLooVbFVnRa0fericctzAr8vSkjVOanXuS9DRmkNpvOw3JFiAhEuxWenmZ5wBOd-SP"
 local roleId = "1251033979524481059"
-
 local embed = {
-    ["title"] = "TriadWare Keybinds Executed",
-    ["description"] = "TriadWare",
-    ["color"] = 8388736,
-    ["fields"] = {
-        {
-            ["name"] = "User ID",
-            ["value"] = tostring(userId)
-        },
-        {
-            ["name"] = "Username",
-            ["value"] = username
-        },
-        {
-            ["name"] = "Game ID",
-            ["value"] = tostring(gameId)
-        },
-        {
-            ["name"] = "Game Link",
-            ["value"] = gameLink
-        },
-        {
-            ["name"] = "Server ID",
-            ["value"] = jobId
-        },
-        {
-            ["name"] = "Time",
-            ["value"] = currentTime
-        }
+    title = "Keybinds Executed",
+    description = "TriadWare",
+    color = 16711935,
+    fields = {
+        { name = "User ID", value = userId },
+        { name = "Username", value = username },
+        { name = "Game ID", value = gameId },
+        { name = "Time", value = currentTime }
     },
-    ["footer"] = {
-        ["text"] = "Triad Execution Logs"
+    footer = {
+        text = "Keybind Execution Logs"
     }
 }
-
-SendMessageEMBED(url, embed, roleId)
+SendMessageEMBED(webhookUrl, embed, roleId)
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "TriadWare",
     Text = "The Keybinds has loaded!"
