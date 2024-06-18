@@ -51,7 +51,7 @@ local gameId = game.PlaceId
 local gameLink = GetGameLink()
 local currentTime = GetCurrentTime()
 
-local url = "https://discord.com/api/webhooks/1248489709307691068/LTV06zoV2Zbg8J3HYWMoRecwY06cfFG_7tnnGcBy1JTeiwWEKYFMIsOyqbXPrh8fUcHX"
+local url = "https://discord.com/api/webhooks/1252738623518801941/1usChK9TGcERH18yRZRSlWbln8p98BN51b95cpGAhpIAQjYzj7RKVQxdmzitnuVfMC4H"
 local roleId = "1248489839544897617"
 
 local authorizedKey = "p4UoHlf5z"
