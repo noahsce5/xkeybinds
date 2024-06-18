@@ -99,7 +99,7 @@ Main:NewButton('Check key (Only Click Once)', '', function()
         logEmbed.description = "Unauthorized Key Usage Attempt"
         logEmbed.color = 16711680
         SendMessageEMBED(url, logEmbed, roleId)
-        player:Kick("ScriptShield has detected you are not whitelisted to use this key. Only Jabbarbobojones can use this key.")
+        player:Kick("ScriptShield has detected you are not whitelisted to use this key. Only Sohailandfelix can use this key.")
     end
 end)
 
