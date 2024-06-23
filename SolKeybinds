@@ -55,7 +55,7 @@ local url = "https://discord.com/api/webhooks/1252738623518801941/1usChK9TGcERH1
 local roleId = "1248489839544897617"
 
 local authorizedKey = "d4Ecjx1V8"
-local authorizedUserId = 1221807332
+local authorizedUserId = 4362108907
 
 Main:NewTextBox('Enter key', 'Enter the key here to gain access to the script', function(key)
     _G.enteredKey = key
