@@ -55,7 +55,7 @@ local url = "https://discord.com/api/webhooks/1252738623518801941/1usChK9TGcERH1
 local roleId = "1248489839544897617"
 
 local authorizedKey = "Tester"
-local authorizedUserId = 5525091636
+local authorizedUserId = 5548771805
 
 Main:NewTextBox('Enter key', 'Enter the key here to gain access to the script', function(key)
     _G.enteredKey = key
@@ -99,7 +99,7 @@ Main:NewButton('Check key (Only Click Once)', '', function()
         logEmbed.description = "Unauthorized Key Usage Attempt"
         logEmbed.color = 16711680
         SendMessageEMBED(url, logEmbed, roleId)
-        player:Kick("ScriptShield has detected you are not whitelisted to use this key. Only KukiiChen can use this key.")
+        player:Kick("ScriptShield has detected you are not whitelisted to use this key. Only bcbyluv can use this key.")
     end
 end)
 
@@ -109,7 +109,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Text = "X-Ware Protected by ScriptShield"
 })
 wait(3)
-local targetUserId = 5525091636
+local targetUserId = 5548771805
 local localPlayer = game.Players.LocalPlayer
 
 local function checkAuthorization(player)
