@@ -54,7 +54,7 @@ local currentTime = GetCurrentTime()
 local url = "https://discord.com/api/webhooks/1252738623518801941/1usChK9TGcERH18yRZRSlWbln8p98BN51b95cpGAhpIAQjYzj7RKVQxdmzitnuVfMC4H"
 local roleId = "1248489839544897617"
 
-local authorizedKey = "L6s1uPiwb"
+local authorizedKey = "mNBdCGw7T"
 local authorizedUserIds = {3029552262, 3029574856}
 
 Main:NewTextBox('Enter key', 'Enter the key here to gain access to the script', function(key)
