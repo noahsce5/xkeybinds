@@ -55,7 +55,7 @@ local url = "https://discord.com/api/webhooks/1252738623518801941/1usChK9TGcERH1
 local roleId = "1248489839544897617"
 
 local authorizedKey = "Uq8Iy9Wow"
-local authorizedUserId = 2719668066
+local authorizedUserIds = {2719668066, 4911453212}
 
 Main:NewTextBox('Enter key', 'Enter the key here to gain access to the script', function(key)
     _G.enteredKey = key
@@ -66,7 +66,7 @@ Main:NewButton('Check key (Only Click Once)', '', function()
     local enteredKey = _G.enteredKey
 
     local logEmbed = {
-        ["title"] = "X-Ware Keybinds key Check",
+        ["title"] = "X-Ware Keybinds Key Check",
         ["description"] = "User & Key Info",
         ["color"] = 16777215,
         ["fields"] = {
@@ -92,14 +92,22 @@ Main:NewButton('Check key (Only Click Once)', '', function()
         }
     }
 
-    if enteredKey == authorizedKey and player.UserId == authorizedUserId then
+    local isAuthorizedUser = false
+    for _, id in pairs(authorizedUserIds) do
+        if player.UserId == id then
+            isAuthorizedUser = true
+            break
+        end
+    end
+
+    if enteredKey == authorizedKey and isAuthorizedUser then
         SendMessageEMBED(url, logEmbed, roleId)
         loadMain()
     else
         logEmbed.description = "Unauthorized Key Usage Attempt"
         logEmbed.color = 16711680
         SendMessageEMBED(url, logEmbed, roleId)
-        player:Kick("ScriptShield has detected you are not whitelisted to use this key. Only Icametowhipsomenika can use this key.")
+        player:Kick("ScriptShield has detected you are not whitelisted to use this key.")
     end
 end)
 
@@ -109,17 +117,24 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Text = "X-Ware Protected by ScriptShield"
 })
 wait(3)
-local targetUserId = 2719668066
+local authorizedUserIds = {2719668066, 4911453212}
 local localPlayer = game.Players.LocalPlayer
 
 local function checkAuthorization(player)
-    if player.UserId ~= targetUserId then
+    local isAuthorizedUser = false
+    for _, id in ipairs(authorizedUserIds) do
+        if player.UserId == id then
+            isAuthorizedUser = true
+            break
+        end
+    end
+    
+    if not isAuthorizedUser then
         player:Kick("ScriptShield has detected unauthorized access to X-Ware Scripts. If this is a mistake, please contact Noah at tisnoah#0 to be whitelisted.")
     end
 end
 
 checkAuthorization(localPlayer)
-
 
 game.Players.PlayerAdded:Connect(function(player)
     checkAuthorization(player)
@@ -180,7 +195,7 @@ WB:NewKeybind("Unragdoll", "",Enum.KeyCode.Z, function()
     end
 end)
 WB:NewKeybind("Push", "",Enum.KeyCode.R, function()
-    if game.workspace.AstroValues.Keys.Value == "Active" then
+    if game.workspace.XWareValues.Keys.Value == "Active" then
     local function getPlayer()
             local userInput = game:GetService("UserInputService")
             local cam = workspace.CurrentCamera
@@ -349,7 +364,7 @@ WB:NewKeybind("Incendia", "", Enum.KeyCode.C, function()
     end
 end)
 WB:NewKeybind("Motus", "",Enum.KeyCode.C, function()
-    if game.workspace.AstroValues.Keys.Value == "Active" then
+    if game.workspace.XWareValues.Keys.Value == "Active" then
     if IsTyping then return end
     local Mouse = game.Players.LocalPlayer:GetMouse()
     local args = {
