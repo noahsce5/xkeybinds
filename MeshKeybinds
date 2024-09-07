@@ -195,7 +195,7 @@ WB:NewKeybind("Unragdoll", "",Enum.KeyCode.Z, function()
     end
 end)
 WB:NewKeybind("Push", "",Enum.KeyCode.R, function()
-    if game.workspace.AstroValues.Keys.Value == "Active" then
+    if game.workspace.XWareValues.Keys.Value == "Active" then
     local function getPlayer()
             local userInput = game:GetService("UserInputService")
             local cam = workspace.CurrentCamera
@@ -364,7 +364,7 @@ WB:NewKeybind("Incendia", "", Enum.KeyCode.C, function()
     end
 end)
 WB:NewKeybind("Motus", "",Enum.KeyCode.F, function()
-    if game.workspace.AstroValues.Keys.Value == "Active" then
+    if game.workspace.XWareValues.Keys.Value == "Active" then
     if IsTyping then return end
     local Mouse = game.Players.LocalPlayer:GetMouse()
     local args = {
