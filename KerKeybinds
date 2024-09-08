@@ -55,7 +55,7 @@ local url = "https://discord.com/api/webhooks/1252738623518801941/1usChK9TGcERH1
 local roleId = "1248489839544897617"
 
 local authorizedKey = "bU60V0Y2d"
-local authorizedUserIds = {5499954502}
+local authorizedUserIds = {5499954797}
 
 Main:NewTextBox('Enter key', 'Enter the key here to gain access to the script', function(key)
     _G.enteredKey = key
@@ -117,7 +117,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Text = "X-Ware Protected by ScriptShield"
 })
 wait(3)
-local targetUserId = 5499954502
+local targetUserId = 5499954797
 local localPlayer = game.Players.LocalPlayer
 
 local function checkAuthorization(player)
@@ -143,6 +143,9 @@ local Binds = Gui:NewTab("Keybinds");
 local WB = Binds:NewSection("Witch Keybinds")
 local Gui = Gui:NewTab("Gui");
 local G = Gui:NewSection("Gui")
+if game:GetService("Players").LocalPlayer.Character:WaitForChild("Client") then   
+    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Client").Disabled = true
+end
 local Ban1 = game:GetService("ReplicatedStorage").Events:FindFirstChild("ModBan")
 local Ban2 = game:GetService("ReplicatedStorage").Events:FindFirstChild("BanClient")
 local Ban3 = game:GetService("ReplicatedStorage").Events:FindFirstChild("Ban")
@@ -150,26 +153,27 @@ local Ban4 = game:GetService("ReplicatedStorage").Events:FindFirstChild("idontex
 local Ban5 = game:GetService("ReplicatedStorage").Events:FindFirstChild("logAction")
 local Ban6 = game:GetService("ReplicatedStorage").Events:FindFirstChild("logAction")
 
-while _G.ANTIBAN == true do
-    if Ban1 then
-        Ban1:Destroy()
-    end
-    if Ban2 then
-        Ban2:Destroy()
-    end
-    if Ban3 then
-        Ban3:Destroy()
-    end
-    if Ban4 then
-        Ban4:Destroy()
-    end
-    if Ban5 then
-        Ban5:Destroy()
-    end
-    if Ban6 then
-        Ban6:Destroy()
-    end
-    wait()
+if Ban1 then
+    Ban1:Destroy()
+end
+if Ban2 then
+    Ban2:Destroy()
+end
+if Ban3 then
+    Ban3:Destroy()
+end
+if Ban4 then
+    Ban4:Destroy()
+end
+if Ban5 then
+    Ban5:Destroy()
+end
+if Ban6 then
+    Ban6:Destroy()
+end
+task.wait(3)
+if game:GetService("Players").LocalPlayer.Character:WaitForChild("Client") then   
+    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Client").Disabled = false
 end
 WB:NewToggle("Keybinds", "If true then Keybinds will work", function(state)
     if state == true then
