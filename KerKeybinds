@@ -55,7 +55,7 @@ local url = "https://discord.com/api/webhooks/1252738623518801941/1usChK9TGcERH1
 local roleId = "1248489839544897617"
 
 local authorizedKey = "bU60V0Y2d"
-local authorizedUserIds = {5499953573}
+local authorizedUserIds = {5499954502}
 
 Main:NewTextBox('Enter key', 'Enter the key here to gain access to the script', function(key)
     _G.enteredKey = key
@@ -117,7 +117,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Text = "X-Ware Protected by ScriptShield"
 })
 wait(3)
-local targetUserId = 5499953573
+local targetUserId = 5499954502
 local localPlayer = game.Players.LocalPlayer
 
 local function checkAuthorization(player)
@@ -188,7 +188,7 @@ WB:NewKeybind("Unragdoll", "",Enum.KeyCode.Z, function()
     end
 end)
 WB:NewKeybind("Push", "",Enum.KeyCode.R, function()
-    if game.workspace.AstroValues.Keys.Value == "Active" then
+    if game.workspace.XWareValues.Keys.Value == "Active" then
     local function getPlayer()
             local userInput = game:GetService("UserInputService")
             local cam = workspace.CurrentCamera
@@ -357,7 +357,7 @@ WB:NewKeybind("Incendia", "", Enum.KeyCode.C, function()
     end
 end)
 WB:NewKeybind("Motus", "",Enum.KeyCode.F, function()
-    if game.workspace.AstroValues.Keys.Value == "Active" then
+    if game.workspace.XWareValues.Keys.Value == "Active" then
     if IsTyping then return end
     local Mouse = game.Players.LocalPlayer:GetMouse()
     local args = {
